@@ -1,0 +1,97 @@
+
+
+
+
+
+<%
+    
+        Class.forName("com.mysql.jdbc.Driver");        
+    
+        
+        try
+        {
+        
+        Connection con =  DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/thairice?characterEncoding=UTF-8","root","Meng254398");
+
+        Statement stmt = con.createStatement();
+        ResultSet rs = stmt.executeQuery("SELECT * FROM admin");          
+        while( rs.next() )
+        {
+            out.print ( rs.getString("adm_id") );
+             out.print ( rs.getString("adm_name") );
+              out.print ( rs.getString("adm_passwd") );
+               out.print ( rs.getString("adm_phone") );
+                out.print ( rs.getString("adm_login_name") );
+                 out.print ( rs.getString("adm_use_start") );
+              
+        }     
+        stmt.close();
+        con.close();
+
+        response.sendRedirect( "manage_user.jsp" ); 
+        }
+        catch(Exception ex){ out.print(ex); }
+
+%>   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table width="600" border="1">
+    <tr>
+        <th width="91"><div align="center"> adm_name   </div></th>
+         <th width="91"><div align="center"> adm_passwd   </div></th>
+          <th width="91"><div align="center"> adm_phone   </div></th>
+           <th width="91"><div align="center"> adm_login_name  </div></th>
+            <th width="91"><div align="center"> adm_use_start   </div></th>    
+    </tr>
+    
+  <%while((psmtx!=null) &&(psmtx.next())){  %>  
+    <tr>
+        <td><div align="center"><%=psmtx.getString("adm_name ") %></div></td>
+       <td><div align="center"><%=psmtx.getString("adm_passwd ") %></div></td>
+        <td><div align="center"><%=psmtx.getString("adm_phone ") %></div></td>
+        <td><div align="center"><%=psmtx.getString("adm_login_name  ") %></div></td>
+        <td><div align="center"><%=psmtx.getString("adm_use_start  ") %></div></td>
+    </tr>
+
+    
+</table>
+
+
+
+
+
+<%
+    
+     Connection connect = null;
+     ResultSet rec = null;
+     Statement s = null;
+     
+     try
+     {
+         Class,forName("com.mysql.jdbc.Driver");
+         connect  DriverManage.getConnection("jdbc:mysql://127.0.0.1:3306/thairice?characterEncoding=UTF-8","root","Meng254398");
+         
+         s = connect.createStatement();
+         String sql="SELECT * FROM admin"
+                 res=s.executeQuery(sql);
+     } catch (Exception e)
+     {
+         out.println(e.getMessage());
+         e.printStackTrace();
+     }
+%>   
+
+

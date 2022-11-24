@@ -1,0 +1,38 @@
+  <form name="createdest" method="get" action="../jsp/create-dest-code.jsp">
+        Country: <input type="text"  required  name="id8" /> <br>
+        City: <input type="text"  required  name="id9" /> <br>
+        URL Video: <input type="url"  required  name="id10" /> <br> <br>
+        <i><ins>Categorize the destination (max 2): </ins></i>  <br> <br>
+        <input type="checkbox" name="dest1" value="2" onClick="return KeepCount()" >Christmas<br>
+        <input type="checkbox" name="dest2" value="1" onClick="return KeepCount()" >Winter <br>
+        <input type="checkbox" name="dest3" value="3" onClick="return KeepCount()" >Summer <br> <br>
+
+        <input type="submit" class="button" value="CREATE DESTINATION" /> 
+
+
+        <br>
+
+
+        </form>
+       <SCRIPT LANGUAGE="javascript">
+
+function KeepCount() {
+
+var NewCount = 0;
+
+if (document.createdest.dest1.checked)
+{NewCount = NewCount + 1;}
+
+if (document.createdest.dest2.checked)
+{NewCount = NewCount + 1;}
+
+if (document.createdest.dest3.checked)
+{NewCount = NewCount + 1;}
+
+if (NewCount == 3)
+{
+alert('Pick Just Two Please');
+document.createdest; return false;
+}
+} 
+</SCRIPT>

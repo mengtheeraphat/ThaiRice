@@ -1,0 +1,206 @@
+   <%
+        Connection c1 =  DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/thairice?characterEncoding=UTF-8","root","Meng254398");
+        Statement s1 = c1.createStatement();  
+            
+       
+        ResultSet rs1 = s1.executeQuery("SELECT * FROM rice_fieldss where fertilizer1_date is not null and fertilizer2_date is not null and harvest_date is not null "); 
+        while( rs1.next() )
+        {
+          java.sql.Date   fertilizer1_date =   rs1.getDate("fertilizer1_date");         
+          java.sql.Date   fertilizer2_date =    rs1.getDate("fertilizer2_date");
+          java.sql.Date   harvest_date =    rs1.getDate("harvest_date");
+          String  rice_field_size =    rs1.getString("rice_field_size");
+           java.sql.Date   plant_field_regis_date =    rs1.getDate("plant_field_regis_date");
+      
+          
+//                    String d1 = "fertilizer1_date";
+//                 System.out.println("Date : " + d1);
+//                 System.out.println("fertilizer1_date :"+fertilizer1_date);
+                 
+                 
+                 
+                 
+//                          int i = 3;
+//                          
+//                          
+//                  
+//                     if("fertilizer1_date" == 2022-03-01){
+//	 	 out.println("true statement i = 1");
+//        	 }else if(d1 == 2){
+//	  	 out.println("true statement i = 2");
+//		 }else if(d1 == 3){
+//	 	 out.println("true statement i = 3");
+//		 }else if(d1 == 4){
+//	  	 out.println("true statement i = 4");
+//		 }else{
+//	  	 out.println("false statement i = " + i);
+//	   }
+//                 
+                 
+
+            //System.out.println("fertilizer1_date :"+fertilizer1_date);
+            //System.out.println("fertilizer2_date :"+fertilizer2_date);
+            //System.out.println("harvest_date :"+harvest_date);
+            //System.out.println("plant_field_regis_date :"+plant_field_regis_date);
+%>
+
+
+
+
+
+<script>  
+
+
+//$(document).ready(function () {
+//    var daysToAdd = <%=fertilizer1_date%> ;
+//     console.log("LINE 178 daysToAdd :: "+daysToAdd );
+//    $("#txtFromDate").datepicker({
+//        onSelect: function (selected) {
+//            var dtMax = new Date(selected);
+//            dtMax.setDate(dtMax.getDate() + daysToAdd); 
+//            var dd = dtMax.getDate();
+//            var mm = dtMax.getMonth() + 1;
+//            var y = dtMax.getFullYear();
+//            
+//             var dtFormatted = y + '/'+ mm + '/'+ dd;
+//   //var dtFormatted = mm + '/'+ dd + '/'+ y;
+//            console.log("dtFormatted :: "+dtFormatted );
+//          //  $("#txtToDate").datepicker("option", "minDate", dtFormatted);
+//             $("#txtToDate").val(dtFormatted);
+//        }
+//    });
+//    
+//    });
+  
+
+
+</script>  
+
+
+
+
+<script>  
+//  $(document).ready(function () {
+//    
+//      var daysToAdd = <%=plant_field_regis_date%> ;
+//     console.log("LINE  DAY1 "+daysToAdd );
+//     
+     
+   //var oneDate = moment(daysToAdd, 'DD-MM-YYYY');
+//    var oneDate = moment(daysToAdd).tz('Asia/Bangkok').format( 'DD-MM-YYYY').
+     // var monthName = oneDate.format('');
+//   console.log(oneDate);
+//     
+    
+
+//        var date = new Date();
+//        test = date.toISOString();     
+//        var m1 = moment(test, "YYYYMMDD")
+//        console.log(m1.format());
+//        console.log(m1.fromNow());
+//        var m2 = moment(test)
+//        console.log(m2.format());
+//        console.log(m2.fromNow());
+//        var m3 = moment(date)
+//        console.log(m3.format());
+//        console.log(m3.fromNow());
+       
+     
+     
+     
+     
+     
+     /// var Message1 = <%=fertilizer1_date%>;
+        
+     // let now = new Date(Message1);
+   // console.log('Message1' +Message1) ;
+    
+    
+       // var dateString = moment().format('YYYY-MM-DD');
+          // console.log(Message1) ;// Output: 2020-07-21
+
+//
+//    if ( moment(dateString).format("DD/MM/YYYY") === moment(Date.now()).format("DD/MM/YYYY")) 
+//     {
+//          $("Message").html('กรุณาใส่ปุ๋ย1');
+//              //       document.getElementById('lbltipAddedComment').innertext = "กรุณาใส่ปุ๋ย";
+//    } 
+//    else {
+//      $("Message").html('ไม่มีแจ้งเตือน');
+//       document.getElementById('lbltipAddedComment').innertext = "ไม่มีแจ้งเตือน";
+//    }  
+//    if(status1 === 'Y'){
+//                if (moment("2022-01-30").format("DD/MM/YYYY") === moment(Date.now()).format("DD/MM/YYYY")) {
+//                 //  Message = "กรุณาใส่ปุ๋ย";
+//                // $("#label_id").html('value');
+//                 $("#Message").html('กรุณาใส่ปุ๋ย1'); 
+//
+//                 } else {
+//                  // Message = "ไม่มีแจ้งเตือน";
+//                   $("#Message").html('ไม่มีแจ้งเตือน2');
+//                   //document.getElementById("Message").value =('ไม่มีแจ้งเตือน2');
+//                 }
+//    }
+//   
+
+//  });
+  
+    //
+    // ฟังก์ชันการใส่ปุ๋ยเมื่อถึงวัน1
+//  function addFertilizer(){
+//      
+//    if (
+//      moment(<%=fertilizer1_date%>).format("DD/MM/YYYY") ===
+//      moment(Date.now()).format("DD/MM/YYYY")
+//    ) {
+//        document.getElementById("Message").value =('กรุณาใส่ปุ๋ย1');
+////       document.getElementById('lbltipAddedComment').innertext = "กรุณาใส่ปุ๋ย";
+//    } else {
+//         document.getElementById("Message").value =('ไม่มีแจ้งเตือน1');
+////       document.getElementById('lbltipAddedComment').innertext = "ไม่มีแจ้งเตือน";
+//    }
+//  }
+  
+    // ฟังก์ชันการใส่ปุ๋ยเมื่อถึงวัน2
+//  function addFertilizer2(){
+//    if (
+//      moment("2022-01-30").format("DD/MM/YYYY") ===
+//      moment(Date.now()).format("DD/MM/YYYY")
+//    ) {
+//    //  Message = "กรุณาใส่ปุ๋ย";
+//    document.getElementById("Message").value =('กรุณาใส่ปุ๋ย2');
+//    } else {
+//     // Message = "ไม่มีแจ้งเตือน";
+//      document.getElementById("Message").value =('ไม่มีแจ้งเตือน2');
+//    }
+//  }
+//  
+  
+   // ฟังก์ชันการเก็บเกี่ยวเมื่อถึงวัน
+//  function harvest(){
+//    if (
+//      moment(<%=fertilizer1_date%>).format("DD/MM/YYYY") ===
+//      moment(Date.now()).format("DD/MM/YYYY")
+//    ) {
+//      Message = "ถึงเวลาเก็บเกี่ยว";
+//    } else {
+//      Message = "ไม่มีแจ้งเตือน"; 
+//    }
+//  }
+//     
+ 
+
+
+
+
+
+</script>  
+
+          <%
+    }
+
+
+c1.close();
+
+
+      %>  
